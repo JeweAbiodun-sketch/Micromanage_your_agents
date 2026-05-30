@@ -15,10 +15,11 @@ The goal of this project is to:
 
 ## Repository Contents
 
-- `evaluation_report.md` - detailed evaluation findings
-- `evaluation_summary.md` - concise overview of the evaluation results
-- `optimization_summary.md` - summary of optimization approaches and outcomes
-- `blog_eval_lab/Analysis.md` - supporting analysis for the blog or lab section
+- `blog_eval_lab/blog_eval_langsmith.ipynb` - main notebook: dataset creation, tracing, evaluation, A/B model comparison
+- `evaluation_report.md` - detailed evaluation findings with per-example scores and error analysis
+- `evaluation_summary.md` - concise overview of methodology, results, and key findings
+- `optimization_summary.md` - cost-performance analysis and model recommendations
+- `Screenshots/` - LangSmith experiment screenshots used as evaluation evidence
 
 ## What You Will Find Here
 
@@ -29,10 +30,25 @@ The goal of this project is to:
 
 ## How to Use This Repository
 
-1. Start with `evaluation_summary.md` for a quick understanding of the results.
-2. Review `evaluation_report.md` for the full analysis.
-3. Read `optimization_summary.md` to see what was changed or tested.
-4. Check `blog_eval_lab/Analysis.md` for additional context and supporting notes.
+1. Open `blog_eval_lab/blog_eval_langsmith.ipynb` to run or review the full lab experiment.
+2. Start with `evaluation_summary.md` for a quick understanding of the results.
+3. Review `evaluation_report.md` for the full analysis with tables and error patterns.
+4. Read `optimization_summary.md` to see cost-performance trade-offs and model recommendations.
+
+### Running the Notebook
+
+```bash
+# Install dependencies
+pip install langsmith langchain-openai openai python-dotenv
+
+# Set environment variables in blog_eval_lab/.env
+OPENAI_API_KEY=sk-...
+LANGSMITH_API_KEY=ls__...
+LANGSMITH_ENDPOINT=https://eu.api.smith.langchain.com
+LANGSMITH_PROJECT=blog_eval_langsmith
+```
+
+Open `blog_eval_lab/blog_eval_langsmith.ipynb` using the **Micromanage Agents (.venv)** kernel and run all cells top to bottom.
 
 ## Suggested Workflow
 
